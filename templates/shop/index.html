@@ -1,0 +1,30 @@
+{% extends "shop/headfooter.html" %}
+{% load staticfiles %} 
+{% block title %}
+BWRTLEY
+{% endblock title %}
+{% block body %}
+<body class="site home-bg-colour home-page">
+    <main class="site-content home-main center-outer">
+        <div class="center__inner">
+            <div class="site-logo" itemscope itemtype="http://schema.org/Organization">        
+              <a href="#" itemprop="url" class="site-logo__link">
+                <img src="{% static "images/bwrtley.png" %}" style="max-width: 200px" alt="bwrtley" itemprop="logo">
+              </a>        
+            </div>
+        <a class="button" href="#" itemprop="url">Enter Store</a>  
+        </div>
+    </main>    
+    <footer id="footer">
+        <div class="wrapper">
+            <form action="" class="subscribe-box" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+                <input type="email" value="" placeholder="Enter Email For Release Updates" name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com" autocorrect="off" autocapitalize="off">
+            </form>
+            <ul class="nav nav--footer">
+                <li><a href="#">Admin</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Return Policy</a></li>
+            </ul> 
+        </div>    
+    </footer>
+{% endblock body %}
