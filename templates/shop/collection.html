@@ -1,0 +1,83 @@
+{%extends "shop/headfooter.html"%}
+{%load staticfiles%} 
+{%block title%}
+Products - BWRTLEY
+{%endblock title%}
+{%block body%}
+<body class="site collection-bg-colour collection-page template-collection">
+    <main class="site-content">
+        <header class="header header--collection">
+            <div class="wrapper">
+                      
+                <div class="text-left large-right mt-2" id='coin-container'>
+                    {% if user.is_authenticated %}  
+                        <p>Hi {{user.username}}, <a href="{% url 'logout' %}">Logout</a></p>
+                    {% else %}
+                        <a href="{%url 'shop:signin'%}">Login</a>
+                    {%endif%}
+                </div>   
+                <div class="text-right large-right cart-link-top">        
+                    <a href="#" id="cartToggle">
+                        <i class="fas fa-shopping-cart"></i> 
+                    </a>
+                </div>    
+            </div>
+            <div class="site-logo" itemscope itemtype="http://schema.org/Organization">
+                <div class="site-logo" itemscope itemtype="http://schema.org/Organization"> 
+                    <a href="{% url 'home'%}" itemprop="url" class="site-logo__link">
+                        <img src="{% static "images/bwrtley-logo-black.png" %}" style="max-width: 75px" alt="bertley" itemprop="logo">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="grid">
+                    <div class="grid__item product-grid-item large--one-third medium--one-third small--one-half">
+                            <a href="{%url 'shop:product'%}" class="grid__image">
+                                <img src="{%static "images/test-img.jpg"%}" alt="Black Asymmetric Vest Dress">
+                            </a> 
+                            <p>
+                                <a href="{%url 'shop:product'%}">Black Asymmetric Vest Dress</a>
+                            </p>
+                            <p>
+                                <span class="product-on-sale"><span class=money>£39.99</span></span>
+                            </p>    
+                            <p>                   
+                                <span class="visually-hidden">Regular price</span>
+                                <s><span class=money>£59.99</span></s>               
+                            </p> 
+                    </div>
+                    <div class="grid__item product-grid-item large--one-third medium--one-third small--one-half">
+                            <a href="{%url 'shop:product'%}" class="grid__image">
+                                <img src="{%static "images/test-img.jpg"%}" alt="Black Asymmetric Vest Dress">
+                            </a> 
+                            <p>
+                                <a href="{%url 'shop:product'%}">Black Asymmetric Vest Dress</a>
+                            </p>
+                            <p>
+                                <span class="product-on-sale"><span class=money>£39.99</span></span>
+                            </p>    
+                            <p>                   
+                                <span class="visually-hidden">Regular price</span>
+                                <s><span class=money>£59.99</span></s>               
+                            </p> 
+                    </div>
+                    <div class="grid__item product-grid-item large--one-third medium--one-third small--one-half">
+                            <a href="{%url 'shop:product'%}" class="grid__image">
+                                <img src="{%static "images/test-img.jpg"%}" alt="Black Asymmetric Vest Dress">
+                            </a> 
+                            <p>
+                                <a href="{%url 'shop:product'%}">Black Asymmetric Vest Dress</a>
+                            </p>
+                            <p>
+                                <span class="product-on-sale"><span class=money>£39.99</span></span>
+                            </p>    
+                            <p>                   
+                                <span class="visually-hidden">Regular price</span>
+                                <s><span class=money>£59.99</span></s>               
+                            </p> 
+                    </div>
+            </div>
+         </div>
+    </main>
+{%endblock body%}

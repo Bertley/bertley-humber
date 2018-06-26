@@ -8,11 +8,11 @@ BWRTLEY
     <main class="site-content home-main center-outer">
         <div class="center__inner">
             <div class="site-logo" itemscope itemtype="http://schema.org/Organization">        
-              <a href="#" itemprop="url" class="site-logo__link">
+              <a href="{%url 'collection'%}" itemprop="url" class="site-logo__link">
                 <img src="{% static "images/bwrtley.png" %}" style="max-width: 200px" alt="bwrtley" itemprop="logo">
               </a>        
             </div>
-        <a class="button" href="#" itemprop="url">Enter Store</a>  
+        <a class="button" href="{%url 'collection'%}" itemprop="url">Enter Store</a>  
         </div>
     </main>    
     <footer id="footer">
@@ -21,7 +21,7 @@ BWRTLEY
                 <input type="email" value="" placeholder="Enter Email For Release Updates" name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com" autocorrect="off" autocapitalize="off">
             </form>
             <ul class="nav nav--footer">
-                <li><a href="#">Admin</a></li>
+                <li><a href="{%url 'admin:index'%}">Admin</a></li>
                 <li><a href="#">Terms</a></li>
                 <li><a href="#">Return Policy</a></li>
             </ul> 

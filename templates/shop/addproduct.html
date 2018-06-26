@@ -1,0 +1,14 @@
+{%extends "shop/adminheadfooter.html"%}
+{%load staticfiles%} 
+{%block title%}
+Add Product - Admin
+{%endblock title%}
+{%block body%}
+    <div style="margin:0 auto;">
+        <form action="{%url 'addproduct'%}" method="POST">
+            {% csrf_token %}
+            {{addproduct_form.as_p}}
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+{%endblock body%}

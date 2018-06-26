@@ -1,0 +1,123 @@
+{% extends "shop/headfooter.html" %}
+{% load staticfiles %} 
+{% block title %}
+BWRTLEY
+{% endblock title %}
+{% block body %}
+<body class="site product-bg-colour">
+    <main class="site-content">
+        <header class="header header--collection">
+           <div class="wrapper">         
+                <div class="text-left large-right cart-link-top" id='coin-container'></div>   
+                <div class="text-right large-right cart-link-top">        
+                   <a href="#" id="cartToggle">
+                       <i class="fas fa-shopping-cart"></i> 
+                   </a>
+               </div>    
+           </div>
+           <div class="site-logo" itemscope itemtype="http://schema.org/Organization">
+               <div class="site-logo" itemscope itemtype="http://schema.org/Organization"> 
+                   <a href="{% url 'home'%}" itemprop="url" class="site-logo__link">
+                        <img src="{% static "images/bwrtley-logo-black.png" %}" style="max-width: 75px" alt="bertley" itemprop="logo">
+                   </a>
+               </div>
+           </div>
+        </header>
+
+        <div class="logmod">
+            <div class="logmod__wrapper">
+                <span class="logmod__close">Close</span>
+                <div class="logmod__container">
+                    <ul class="logmod__tabs">
+                        <li class="signin" data-tabtar="lgm-2"><a href="{%url 'shop:signin'%}">Login</a></li>
+                        <li class="register" data-tabtar="lgm-1"><a href="{%url 'shop:register'%}">Sign Up</a></li>
+                    </ul>
+                    <div class="logmod__tab-wrapper">
+                        <div class="logmod__tab lgm-1">
+                            <div class="logmod__heading">
+                                <span class="logmod__heading-subtitle">Enter your personal details <strong>to create an acount</strong></span>
+                            </div>
+                            <div class="logmod__form">
+                                <form enctype="multipart/form-data" action="{% url 'shop:register' %}" method="post">
+                                    {% csrf_token%} 
+                                    {{customer_form.errors}}                                
+                                    <div class="sminputs">
+                                        <div class="input string optional">
+                                            <label class="string optional" for="first_name">First Name *</label>
+                                            {{ customer_form.first_name }} 
+                                        </div>
+                                        <div class="input string optional">
+                                            <label class="string optional" for="last_name">Last Name *</label>
+                                            {{ customer_form.last_name }} 
+                                        </div>
+                                    </div>
+                                    <div class="sminputs">
+                                        <div class="input full">
+                                            <label class="string optional" for="date_of_birth">Date Of Birth</label>
+                                            {{ customer_form.date_of_birth}}                          
+                                        </div>
+                                    </div>
+                                    <div class="sminputs" style="height:120px;">
+                                        <div class="input full">
+                                            <label class="string optional" for="gender">Gender</label>
+                                            {{ customer_form.gender}}
+                                        </div>
+                                    </div>
+                                    <div class="sminputs">
+                                        <div class="input full">
+                                            <label class="string optional" for="email">Email*</label>
+                                            {{ user_form.email}}
+                                        </div>
+                                    </div>
+                                
+                                    <div class="sminputs">
+                                        <div class="input string optional">
+                                                <label class="string optional" for="first_name">Username *</label>
+                                                {{ user_form.username }} 
+                                        </div>
+                                        <div class="input string optional">
+                                                <label class="string optional" for="password">Password *</label>
+                                                {{ user_form.password}}
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="simform__actions">
+                                        <input type="submit" class="btn-lg btn-success ml-5" value="Create Account">
+                                        <span class="simform__actions-sidetext">By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></span>
+                                    </div> 
+                                </form>
+                            </div> 
+                        </div>
+                        <div class="logmod__tab lgm-2">
+                            <div class="logmod__heading">
+                                <span class="logmod__heading-subtitle">Enter your email and password <strong>to sign in</strong></span>
+                            </div> 
+                            <div class="logmod__form">
+                                <form accept-charset="utf-8" action="{% url 'shop:signin'%}" class="simform" method="POST">
+                                        {% csrf_token %}
+                                    <div class="sminputs">
+                                        <div class="input full">
+                                            <label class="string optional" for="username">Username*</label>
+                                            <input class="string optional" maxlength="255" id="user-email" placeholder="Email" name="username" type="text" size="50" />
+                                        </div>
+                                    </div>
+                                    <div class="sminputs">
+                                        <div class="input full">
+                                            <label class="string optional" for="password">Password *</label>
+                                            <input class="string optional" maxlength="255" id="password" name="password" placeholder="Password" type="password" size="50" />
+                                            <span class="hide-password">Show</span>
+                                        </div>
+                                    </div>
+                                    <div class="simform__actions">
+                                        <input type="submit" class="btn-lg btn-success ml-5" value="Sign In">
+                                        <span class="simform__actions-sidetext"><a class="special" role="link" href="#">Forgot your password?<br>Click here</a></span>
+                                    </div> 
+                                </form>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock body %}

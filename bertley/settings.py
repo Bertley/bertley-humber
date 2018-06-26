@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'bertley.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Bertley',
+        'USER': 'root', 
+        'PASSWORD': '',
+        'HOST': '127.0.0.1', 
+        'POST': '3306',
     }
 }
 
@@ -148,5 +152,5 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 # LOGIN 
-LOGIN_URL = '/shop/login'
+LOGIN_URL = '/shop/signin'
 

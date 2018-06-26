@@ -1,0 +1,80 @@
+{% extends "shop/headfooter.html" %}
+{% load staticfiles %} 
+{% block title %}
+Product - BWRTLEY
+{% endblock title %}
+{% block body %}
+<body class="site product-bg-colour product-page">
+    <main class="site-content">
+         <header class="header header--collection">
+            <div class="wrapper">         
+                <div class="text-left large-right cart-link-top" id='coin-container'></div>   
+                <div class="text-right large-right cart-link-top">        
+                    <a href="#" id="cartToggle">
+                        <i class="fas fa-shopping-cart"></i> 
+                    </a>
+                </div>    
+            </div>
+            <div class="site-logo" itemscope itemtype="http://schema.org/Organization">
+                <div class="site-logo" itemscope itemtype="http://schema.org/Organization"> 
+                    <a href="{% url 'home'%}" itemprop="url" class="site-logo__link">
+                    <img src="{% static "images/bwrtley-logo-black.png" %}" style="max-width: 75px" alt="bertley" itemprop="logo">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="url" content="chartreuse-asymmetric-vest-dress.html">
+            <meta itemprop="image" content="http://cdn.shopify.com/s/files/1/1543/1751/products/slingher__10_db620d1f-c133-45cb-84dc-ed850a30a7ec_grande.jpg?v=1518654006">
+            <div class="wrapper"> 
+                <div class="grid product-single">
+                    <div class="grid__item">
+                        <div class="product-slideshow-outer">
+                            <div class="MagicToolboxContainer">
+                                <a href="http://cdn.shopify.com/s/files/1/1543/1751/products/slingher__10_db620d1f-c133-45cb-84dc-ed850a30a7ec.jpg?v=1518654006" class="MagicZoomPlus" id="zoom69257527305" title="Chartreuse Asymmetric Vest Dress"><img itemprop="image" src="{%static "images/test-img.jpg"%}" alt="Chartreuse Asymmetric Vest Dress" /></a>
+                                <div class="MagicToolboxSelectorsContainer">
+                                    <img src="{%static "images/test-img.jpg"%}">
+                                    <img src="{%static "images/test-img.jpg"%}">
+                                    <img src="{%static "images/test-img.jpg"%}">    
+                                </div>         
+                            </div>       
+                        </div>       
+                        <div class="product-content">
+                            <h1 class="product-title" itemprop="name">Chartreuse Asymmetric Vest Dress</h1>
+                            <div class="product-description rte" itemprop="description">
+                                <p> *<em>6 Week Pre-order* </em>Long single-shoulder strap dress in luxuriously heavy weight Lime Green Yellow loopback stretch cotton, with one-sided asymmetric shoulder strap and small side-split to both sides of bottom hem. Tonal stitching. Figure shaping fit by design. 92% cotton, 8% spandex. Handmade. Delicate cold machine wash or hand wash. Fits true to size; t<span color="#999999">ake normal dress size. </span><span color="#999999">Model shown is 165cm tall and wears a UK4, equivalent to size X Small/ US0/ EU32</span></p>
+                            </div>        
+                            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">      
+                                <meta itemprop="priceCurrency" content="GBP">      
+                                <link itemprop="availability" href="http://schema.org/InStock">                 
+                                <form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">       
+                                    <div class="product-price">       
+                                        <p id="ProductPrice" itemprop="price" content="39">
+                                            <span class=money>£39.99</span>
+                                        </p>
+                                        <span class="visually-hidden">Sale price</span>
+                                        <p class="product-sale">
+                                            <s><span class=money>£59.99</span></s>
+                                        </p>
+                                    </div>
+                                <select name="id" id="productSelect" class="product-single__variants">
+                                        <option  selected="selected"  data-sku="17401-CHART-04XS" value="684001787913">UK4 - <span class=money>£39.99 GBP</span></option>
+                                        <option  data-sku="17401-CHART-06S" value="684001820681">UK6 - <span class=money>£39.99 GBP</span></option>
+                                        <option  data-sku="17401-CHART-08M" value="684001853449">UK8 - <span class=money>£39.99 GBP</span></option>
+                                        <option  data-sku="17401-CHART-10L" value="684001886217">UK10 - <span class=money>£39.99 GBP</span></option>
+                                        <option  data-sku="17401-CHART-12XL" value="684001918985">UK12 - <span class=money>£39.99 GBP</span></option>
+                                        <option  data-sku="17401-CHART-14XXL" value="684001951753">UK14 - <span class=money>£39.99 GBP</span></option>
+                                    </select>      
+                                    <span class="visually-hidden">Regular price</span>
+                                    <button type="submit" name="add" id="AddToCart" class="btn btn--primary">
+                                        <span id="AddToCartText">Add to Cart</span>
+                                    </button>
+                                </form>
+                            </div>       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock body %}
