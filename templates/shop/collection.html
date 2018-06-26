@@ -32,51 +32,19 @@ Products - BWRTLEY
         </header>
         <div class="wrapper">
             <div class="grid">
+                {% for product in products %}
                     <div class="grid__item product-grid-item large--one-third medium--one-third small--one-half">
                             <a href="{%url 'shop:product'%}" class="grid__image">
-                                <img src="{%static "images/test-img.jpg"%}" alt="Black Asymmetric Vest Dress">
+                                <img src={{product.product_image_1.url}} alt="{{product.name}}">
                             </a> 
                             <p>
-                                <a href="{%url 'shop:product'%}">Black Asymmetric Vest Dress</a>
+                                <a href="{%url 'shop:product'%}">{{product.name}}</a>
                             </p>
                             <p>
-                                <span class="product-on-sale"><span class=money>£39.99</span></span>
+                                <span class="product-on-sale"><span class=money>${{product.price}}</span></span>
                             </p>    
-                            <p>                   
-                                <span class="visually-hidden">Regular price</span>
-                                <s><span class=money>£59.99</span></s>               
-                            </p> 
                     </div>
-                    <div class="grid__item product-grid-item large--one-third medium--one-third small--one-half">
-                            <a href="{%url 'shop:product'%}" class="grid__image">
-                                <img src="{%static "images/test-img.jpg"%}" alt="Black Asymmetric Vest Dress">
-                            </a> 
-                            <p>
-                                <a href="{%url 'shop:product'%}">Black Asymmetric Vest Dress</a>
-                            </p>
-                            <p>
-                                <span class="product-on-sale"><span class=money>£39.99</span></span>
-                            </p>    
-                            <p>                   
-                                <span class="visually-hidden">Regular price</span>
-                                <s><span class=money>£59.99</span></s>               
-                            </p> 
-                    </div>
-                    <div class="grid__item product-grid-item large--one-third medium--one-third small--one-half">
-                            <a href="{%url 'shop:product'%}" class="grid__image">
-                                <img src="{%static "images/test-img.jpg"%}" alt="Black Asymmetric Vest Dress">
-                            </a> 
-                            <p>
-                                <a href="{%url 'shop:product'%}">Black Asymmetric Vest Dress</a>
-                            </p>
-                            <p>
-                                <span class="product-on-sale"><span class=money>£39.99</span></span>
-                            </p>    
-                            <p>                   
-                                <span class="visually-hidden">Regular price</span>
-                                <s><span class=money>£59.99</span></s>               
-                            </p> 
-                    </div>
+                {% endfor%}
             </div>
          </div>
     </main>

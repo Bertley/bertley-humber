@@ -5,10 +5,15 @@ Add Product - Admin
 {%endblock title%}
 {%block body%}
     <div style="margin:0 auto;">
-        <form action="{%url 'addproduct'%}" method="POST">
+        {% if product_added %}
+        <h1>Product Added</h1>
+        {%else%}
+        <h1>Fill the form to add a product</h1>
+        <form action="{%url 'addproduct'%}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{addproduct_form.as_p}}
             <input type="submit" value="Add Product">
         </form>
+        {%endif%}
     </div>
 {%endblock body%}

@@ -29,16 +29,16 @@ class Ref_Product_type(models.Model):
 
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
-    product_type_code = models.OneToOneField(Ref_Product_type, on_delete=models.CASCADE)
+    product_type_code = models.ForeignKey(Ref_Product_type, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     color = models.CharField(max_length=250)
     size = models.CharField(max_length=10)
     product_description  = models.CharField(max_length=600)
-    product_image_1 = models.ImageField(upload_to='products',blank=True)
-    product_image_2 = models.ImageField(upload_to='products',blank=True)
-    product_image_3 = models.ImageField(upload_to='products',blank=True)
-    product_image_4 = models.ImageField(upload_to='products',blank=True)
+    product_image_1 = models.ImageField(upload_to='products/',blank=True)
+    product_image_2 = models.ImageField(upload_to='products/',blank=True)
+    product_image_3 = models.ImageField(upload_to='products/',blank=True)
+    product_image_4 = models.ImageField(upload_to='products/',blank=True)
 
 class Ref_Order_Status_Code(models.Model): 
     order_status_code = models.AutoField(primary_key=True)

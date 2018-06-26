@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from shop.models import CustomerInfo, Product
 from django.utils.safestring import mark_safe
 
+
 class HorizontalRadioRenderer(forms.RadioSelect):
        def render(self):
             return mark_safe(u'\n'.join([u'%s\n' % w for w in self]))

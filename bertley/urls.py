@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from shop import views
+from django.conf import settings 
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'), 
@@ -24,5 +26,7 @@ urlpatterns = [
     path('shop/', include('shop.urls')),
     path('logout/',views.user_logout, name='logout'), 
     path('admin/dashboard/', views.dashboard, name="dashboard"), 
-    path('admin/addproduct/', views.addproduct, name="addproduct")
-]
+    path('admin/addproduct/', views.addproduct, name="addproduct"),
+    path('admin/myproducts/', views.myproducts, name="myproducts"),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

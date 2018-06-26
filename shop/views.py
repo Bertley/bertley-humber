@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from shop.models import CustomerInfo 
+from shop.models import CustomerInfo,Product
 from shop.forms import CustomerInfoForm,UserForm,AddProductForm
 
 #
@@ -13,10 +13,14 @@ def home(request):
     return render(request, 'shop/index.html')
 
 def collection(request): 
-    return render(request, 'shop/collection.html')
+    products = Product.objects.all()
+    args = {'products':products}
+    return render(request, 'shop/collection.html', args)
 
 def product(request):
-    return render(request, 'shop/product.html')
+    product = Product.objects.get(id=1)
+    args = {'product':product}
+    return render(request, 'shop/product.html', args)
 
 @login_required
 def special(request):
@@ -108,6 +112,7 @@ def addproduct(request):
 
             product.save()
             product_added = True
+            # return redirect('dashboard')
         else: 
             print(addproduct_form.errors)
     else:
@@ -119,3 +124,8 @@ def addproduct(request):
                         'addproduct_form':addproduct_form,
                         'product_added':product_added
                     })
+
+def myproducts(request):
+    products = Product.objects.all()
+    args = {'products':products}
+    return render(request, 'shop/myproducts.html', args)
